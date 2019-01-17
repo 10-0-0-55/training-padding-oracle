@@ -11,8 +11,8 @@ if(!isset($_COOKIE['enc_flag'])){
     $_SESSION['key'] = $key;
     $enc = openssl_encrypt($flag, $cipher, $key, 0, $iv);
     //store
-    $_COOKIE['enc_flag'] = $enc;
-    $_COOKIE['iv'] = $iv;
+    setcookie("enc_flag", $enc);
+    setcookie("iv", $iv);
 }
 else{
     $enc_flag = $_COOKIE['enc_flag'];
